@@ -1,0 +1,415 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>8 Fallacies - Strangeloop 2014</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=792, user-scalable=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<link rel="stylesheet" href="shower/themes/ribbon/styles/screen.css">
+</head>
+<body class="list">
+	<header class="caption">
+		<h1>The Eight Fallacies of Distributed Computing</h1>
+		<p>Stephen Asbury, Fog Creek Software</p>
+	</header>
+	<section class="slide cover" id="Cover"><div>
+		<h2>The Eight Fallacies of Distributed Computing</h2>
+		<p><a href="https://thestrangeloop.com/">Stephen Asbury - Strangeloop 2014</a></p>
+		<img src="pictures/geo_animals.png" alt="">
+		<!--
+			To apply styles to the certain slides
+			set slide ID to get needed elements
+			-->
+		<style>
+			#Cover {
+				background-color: white;
+			}
+			#Cover h2 {
+				margin:30px 0 0;
+				color:#FFF;
+				text-align:center;
+				font-size:70px;
+				}
+			#Cover p {
+				margin:10px 0 0;
+				text-align:center;
+				color:#FFF;
+				font-style:italic;
+				font-size:20px;
+				}
+				#Cover p a {
+					color:#FFF;
+					}
+		</style>
+	</div></section>
+	<section class="slide" id="aboutme"><div>
+		<style>
+			#aboutme p.note {
+				margin-bottom: 24px;
+				}
+		</style>
+		<h2>About Stephen Asbury</h2>
+		<ul>
+			<li>Fog Creek Software</li>
+			<li>TIBCO Software</li>
+			<li>Paradigm Research</li>
+			<li>Next Computer</li>
+			<li>PhD Nuclear Engineering</li>
+		</ul>
+		<p class="note">
+			<img src="pictures/fogcreek.gif" />
+			<img src="pictures/tibco.png" />
+			<img src="pictures/pri.png" />
+			<img src="pictures/next.jpg" />
+			<img src="pictures/umich_atom.png" />
+		</p>
+		<p class="note2">
+		sasbury@fogcreek.com - www.sasbury.com - @s_asbury
+		</p>
+	</div></section>
+	<section class="slide"><div>
+		<h2>History - Wikipedia Style</h2>
+		<figure>
+			<blockquote>
+				<p>The list of fallacies generally came about at Sun Microsystems. L. Peter Deutsch, one of the original Sun "Fellows", is credited with penning the first seven fallacies in 1994; however, Bill Joy and Tom Lyon had already identified the first four as "The Fallacies of Networked Computing"[3] (the article claims "Dave Lyon", but this is considered a mistake). Around 1997, James Gosling, another Sun Fellow and the inventor of Java, added the eighth fallacy.</p>
+			</blockquote>
+			<figcaption>Wikipedia</figcaption>
+		</figure>
+	</div></section>
+	<section class="slide shout" id="fallacy"><div>
+		<style>
+			#fallacy p.note {
+				margin-top: 460px;
+			}
+		</style>
+		<h2>Fallacy: a wrong belief, a false or mistaken idea</h2>
+		<p class="note">It's a sub-conscious thing...</p>
+	</div></section>
+	<section class="slide cover" id="reliable"><div>
+		<h2>The Network Is Reliable</h2>
+		<img src="pictures/backhoe_scoop.jpg" alt="">
+		<style>
+			#reliable h2 {
+				color:#FFF;
+				}
+		</style>
+		<p class="note"></p>
+	</div></section>
+	<section class="slide cover" id="reliable_2"><div>
+		<h2>The Network Is Reliable</h2>
+		<img src="pictures/axe.jpg" alt="">
+		<style>
+			#reliable_2 h2 {
+				color:#000;
+				}
+		</style>
+		<p class="note"></p>
+	</div></section>
+	<section class="slide cover" id="shark"><div>
+		<h2>The Network is Reliable</h2>
+		<img src="pictures/shark.png" alt="">
+		<style>
+			#shark h2 {
+				color:#FFF;
+				}
+		</style>
+		<p class="note"></p>
+	</div></section>
+	<section class="slide cover" id="latency_2"><div>
+		<h2>Latency Is Zero</h2>
+		<img src="pictures/spread_networks.png" alt="">
+		<style>
+			#latency_2 h2 {
+				color:#FFF;
+				}
+		</style>
+		<p class="note"></p>
+	</div></section>
+	<section class="slide cover" id="jamie"><div>
+		<h2>Latency Is Zero</h2>
+		<img src="pictures/phone_purse.png" alt="">
+		<img class="next" src="pictures/phone_purse_calc.png" alt="">
+		<style>
+			#jamie h2 {
+				color:#FFF;
+				}
+		</style>
+		<p class="note"></p>
+	</div></section>
+	<section class="slide cover" id="latency"><div>
+		<h2>Latency Is Zero</h2>
+		<img src="pictures/garbage_truck.png" alt="">
+		<style>
+			#latency h2 {
+				color:#000;
+				}
+		</style>
+		<p class="note"></p>
+	</div></section>
+	<section class="slide cover" id="infinite"><div>
+		<h2>Bandwidth Is Infinite</h2>
+		<img src="pictures/merge.png" alt="">
+		<style>
+			#infinite h2 {
+				color:#FFF;
+				}
+		</style>
+		<p class="note"></p>
+	</div></section>
+	<section class="slide cover" id="tug"><div>
+		<h2>Bandwidth Is Infinite</h2>
+		<img src="pictures/tugofwar.png" alt="">
+		<style>
+			#tug h2 {
+				color:#FFF;
+				}
+		</style>
+		<p class="note"></p>
+	</div></section>
+	<section class="slide cover" id="bigdrll"><div>
+		<h2>Bandwidth Is Infinite</h2>
+		<img src="pictures/train-sized-drill.png" alt="">
+		<style>
+			#bigdrll h2 {
+				color:#FFF;
+				}
+		</style>
+		<p class="note"></p>
+	</div></section>
+	<section class="slide cover" id="secure"><div>
+		<h2>The Network is Secure</h2>
+		<img src="pictures/heartbleed-matrix.jpg" alt="">
+		<style>
+			#secure h2 {
+				color:#FFF;
+				}
+		</style>
+		<p class="note"></p>
+	</div></section>
+	<section class="slide cover" id="train"><div>
+		<h2>The Network is Secure</h2>
+		<img src="pictures/great-train-robbery.png" alt="">
+		<style>
+			#train h2 {
+				color:#FFF;
+				}
+		</style>
+		<p class="note"></p>
+	</div></section>
+	<section class="slide cover" id="icloud"><div>
+		<h2>The Network is Secure</h2>
+		<img src="pictures/icloud.png" alt="">
+		<style>
+			#icloud h2 {
+				color:#FFF;
+				}
+		</style>
+		<p class="note"></p>
+	</div></section>
+	<section class="slide cover" id="topology"><div>
+		<h2>Topology Doesn’t Change</h2>
+		<img src="pictures/key_peele_cap.jpg" alt="">
+		<style>
+			#topology h2 {
+				color:#FFF;
+				}
+		</style>
+		<p class="note"></p>
+	</div></section>
+	<section class="slide cover" id="topology_2"><div>
+		<h2>Topology Doesn’t Change</h2>
+		<img src="pictures/ghostbusters.png" alt="">
+		<style>
+			#topology_2 h2 {
+				color:#FFF;
+				}
+		</style>
+		<p class="note"></p>
+	</div></section>
+	<section class="slide cover" id="topology_3"><div>
+		<h2>Topology Doesn’t Change</h2>
+		<img src="pictures/unboxing.jpg" alt="">
+		<style>
+			#topology_3 h2 {
+				color:#FFF;
+				}
+		</style>
+		<p class="note"></p>
+	</div></section>
+	<section class="slide cover" id="admin_2"><div>
+		<h2>There is One Administrator</h2>
+		<img src="pictures/cerberus.png" alt="">
+		<style>
+			#admin_2 h2 {
+				color:#FFF;
+				}
+		</style>
+		<p class="note"></p>
+	</div></section>
+	<section class="slide cover" id="admin"><div>
+		<h2>There is One Administrator</h2>
+		<img src="pictures/snowden.jpg" alt="">
+		<style>
+			#admin h2 {
+				color:#FFF;
+				}
+		</style>
+		<p class="note"></p>
+	</div></section>
+	<section class="slide cover" id="hostage"><div>
+		<h2>There is One Administrator</h2>
+		<img src="pictures/hostage.png" alt="">
+		<style>
+			#hostage h2 {
+				color:#FFF;
+				}
+		</style>
+		<p class="note"></p>
+	</div></section>
+	<section class="slide cover" id="transport"><div>
+		<h2>Transport Cost is Zero</h2>
+		<img src="pictures/netflix_comcast.png" alt="">
+		<style>
+			#transport h2 {
+				color:#FFF;
+				}
+		</style>
+		<p class="note"></p>
+	</div></section>
+	<section class="slide cover" id="transport_2"><div>
+		<h2>Transport Cost is Zero</h2>
+		<img src="pictures/sagan.png" alt="">
+		<style>
+			#transport_2 h2 {
+				color:#FFF;
+				}
+		</style>
+		<p class="note"></p>
+	</div></section>
+	<section class="slide cover" id="latency_cost"><div>
+		<h2>Transport Cost Is Zero</h2>
+		<img src="pictures/latency.png" alt="">
+		<style>
+			#latency_cost h2 {
+				color:#000;
+				}
+		</style>
+		<p class="note"></p>
+	</div></section>
+	<section class="slide cover" id="tron"><div>
+		<h2>The Network is Homogeneous</h2>
+		<img src="pictures/tron.png" alt="">
+		<style>
+			#tron h2 {
+				color:#FFF;
+				}
+		</style>
+		<p class="note"></p>
+	</div></section>
+	<section class="slide cover" id="homogeneous"><div>
+		<h2>The Network is Homogeneous</h2>
+		<img src="pictures/zackmorrisphone1.png" alt="">
+		<style>
+			#homogeneous h2 {
+				color:#FFF;
+				}
+		</style>
+		<p class="note"></p>
+	</div></section>
+	<section class="slide cover" id="westworld"><div>
+		<h2>The Network is Homogeneous</h2>
+		<img src="pictures/westworld.png" alt="">
+		<style>
+			#westworld h2 {
+				color:#000;
+				}
+		</style>
+		<p class="note"></p>
+	</div></section>
+	<section class="slide" id="eight"><div>
+		<h2>The Eight Fallacies</h2>
+		<ul>
+			<li>The Network Is Reliable</li>
+			<li>Latency Is Zero</li>
+			<li>Bandwidth Is Infinite</li>
+			<li>The Network Is Secure</li>
+			<li>Topology Doesn't Change</li>
+			<li>There Is One Administrator</li>
+			<li>Transport Cost Is Zero</li>
+			<li>The Network Is Homogeneous</li>
+		</ul>
+		<p class="note">
+		</p>
+	</div></section>
+
+	<section class="slide" id="realworld"><div>
+		<h2>In The Real World</h2>
+		<ul>
+			<li>CORBA, RMI, ...</li>
+			<li>Web Sockets, Polling, ...</li>
+			<li>Timeouts - good, bad and ugly</li>
+			<li>Trust Physics</li>
+			<li>Read the docs .. and .. TEST</li>
+			<li>Are you real time?</li>
+		</ul>
+		<p class="note">
+		Go back and watch the Jepsen II Talk
+		</p>
+	</div></section>
+
+	<section class="slide cover" id="parting"><div>
+		<h2>Let's Be Careful Out There</h2>
+		<img src="pictures/careful_out_there.png" alt="">
+		<style>
+			#parting h2 {
+				color:#FFF;
+				}
+			#parting p.note {
+				margin-top: 360px;
+				margin-left: 700px;
+				color:#FFF;
+			}
+		</style>
+	</div></section>
+
+	<section class="slide shout" id="closing"><div>
+		<style>
+			#closing p.note {
+				margin-top: 460px;
+			}
+		</style>
+		<h2><strike>Questions?</strike><strike>Comments?</strike>Applause</h2>
+		<p class="note">
+		sasbury@fogcreek.com - www.sasbury.com - @s_asbury
+		</p>
+	</div></section>
+<section class="slide" id="references"><div>
+		<style>
+			#references li {
+				font-size:10px;
+				}
+		</style>
+		<h2>Some References</h2>
+		<ul>
+			<li>https://blogs.oracle.com/jag/resource/Fallacies.html - http://www.rgoarchitects.com/Files/fallacies.pdf">Arnon Rotem-Gal-Oz - http://java.sys-con.com/node/38665">Deutsch's Fallacies, 10 Years After</li>
+			<li>http://xkcd.com/1354">XKCD - Heartbleed Explanation</li>
+			<li>http://www.nytimes.com/2014/02/24/business/media/comcast-and-netflix-reach-a-streaming-agreement.html?_r=0">Netflix/Comcast - http://arstechnica.com/tech-policy/2014/06/fcc-gets-comcast-verizon-to-reveal-netflixs-paid-peering-deals/">Netflix/Verizon</li>
+			<li>http://spreadnetworks.com/">Spread Networks</li>
+			<li>http://aphyr.com/tags/Jepsen">Call Me Maybe & Jepsen</li>
+			<li>http://highscalability.com/blog/2014/2/26/the-whatsapp-architecture-facebook-bought-for-19-billion.html">What's App Tech Stack</li>
+			<li>http://status.fogcreek.com/2012/05/may-5-6-network-maintenance-post-mortem.html">FogCreek Network Flood</li>
+			<li>https://github.com/elasticsearch/elasticsearch/issues/2488">Elastic Search GC issue</li>
+			<li>http://www.wired.com/2014/08/shark_cable/">Sharks - http://www.networkworld.com/article/2464035/cloud-computing/google-wraps-its-trans-pacific-fiber-cables-in-kevlar-to-prevent-against-shark.html">More sharks</li>
+			<li>http://status.fogcreek.com/2012/05/may-5-6-network-maintenance-post-mortem.html">Fog Creek Spanning Tree Flood</li>
+			<li>http://www.ibiblio.org/harris/500milemail.html">500 mile email - http://www.ibiblio.org/harris/500milemail-faq.html">500 mile email faq</li>
+			<li>http://money.cnn.com/2014/08/28/technology/security/bank-hack/">Bank hack</li>
+			<li>http://www.cio.com.au/article/255165/sorting_facts_terry_childs_case/?pf=1">Terry Childs</li>
+			<li>http://en.wikipedia.org/wiki/August_2014_celebrity_photo_leaks">Celebrity photo hack & leak
+			<li>http://www.somethingsimilar.com/2013/01/14/notes-on-distributed-systems-for-young-bloods/?">Notes on distributed systems for young bloods - http://queue.acm.org/detail.cfm?id=2655736">ACM paper on real world network problems - http://rescomp.stanford.edu/~cheshire/rants/Latency.html">Its the latency stupid</li>
+
+		</ul>
+	</div></section>
+	<div class="progress"><div></div></div>
+	<script src="shower/shower.min.js"></script>
+</body>
+</html>
